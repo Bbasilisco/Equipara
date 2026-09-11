@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Equipara</title>
 <style>
   :root{
@@ -183,8 +184,8 @@
     </div>
   </div>
 
-  <h2 style="margin-top:26px">Dezesseis anos, nove fotografias</h2>
-  <p class="mini">Gap bruto e gap controlado por escolaridade, ano a ano. A amostra sorteia linhas, não anos: 2010, 2014, 2016, 2017, 2019, 2020, 2021 e 2024 não estão presentes. São fotografias, não uma linha do tempo contínua. O gap está em porcentagem de propósito: em reais, a inflação entraria na conta.</p>
+  <h2 style="margin-top:26px">Nove anos observados num intervalo de dezesseis</h2>
+  <p class="mini">Gap bruto e gap controlado por escolaridade, ano a ano. A amostra sorteia linhas, não anos: 2010, 2014, 2016, 2017, 2019, 2020, 2021 e 2024 não entraram no sorteio. Por isso este gráfico não é uma série temporal contínua: é uma amostra pontual de nove anos dentro do intervalo de 2009 a 2025, com lacunas entre eles. O gap está em porcentagem de propósito: em reais, a inflação entraria na conta.</p>
   <div class="rolar"><svg id="g-serie" viewBox="0 0 720 300" role="img" aria-label="Gap bruto e gap controlado por escolaridade, 2009 a 2025" style="max-width:100%;height:auto"></svg></div>
   <div class="legenda"><span><i style="background:#4b2c82"></i>Gap controlado por escolaridade</span><span><i style="background:#a9a3b8"></i>Gap bruto</span><span><i style="background:#d6336c"></i>Lei nº 14.611, julho de 2023</span></div>
   <p class="mini" style="margin-top:10px">A linha clara cai sozinha porque o perfil educacional das mulheres subiu. A linha escura é a comparação justa: de 22,3% em 2009 para 9,3% em 2025. Entre os dois anos posteriores à lei, de 11,7% (2023) para 9,3% (2025). Dois pontos não fazem tendência, e o trabalho não afirma causalidade.</p>
@@ -570,6 +571,7 @@ function gSerie(){
   var faltam=[2010,2014,2016,2017,2019,2020,2021,2024];
   faltam.forEach(function(a){ txt(s,x(a),H-12,"·",{"text-anchor":"middle","font-size":"14",fill:LINHA}); });
   SERIE.forEach(function(p){ txt(s,x(p.ano),y(p.ctrl)-9,pct(p.ctrl),{"text-anchor":"middle","font-size":"10","font-weight":"700",fill:NAVY}); });
+  SERIE.forEach(function(p){ txt(s,x(p.ano),y(p.bruto)+16,pct(p.bruto),{"text-anchor":"middle","font-size":"10","font-weight":"700",fill:CINZA}); });
 }
 
 /* ================= CONTRAFACTUAL ================= */
